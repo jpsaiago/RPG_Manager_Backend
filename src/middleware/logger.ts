@@ -1,8 +1,10 @@
 import { Request, Response, NextFunction } from "express";
 import chalk from "chalk";
 
-const request = (info: string) => {
-  console.log(chalk.blueBright(`[${new Date().toLocaleDateString}] [INFO] ${info}`));
+const request = (req: Request, res: Response, next: NextFunction) => {
+  console.log(chalk.blueBright(`[${new Date().toLocaleDateString}] [${req.method} - ${req.ip}]`));
+  console.table(req.body);
+  next();
 };
 
 const warning = (err: Error) => {

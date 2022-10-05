@@ -23,4 +23,4 @@ const loginSchema = z
     }
   });
 
-export default loginSchema;
+export { loginSchema };

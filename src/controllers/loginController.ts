@@ -1,7 +1,7 @@
 import express from "express";
 import logger from "../middleware/logger";
-import validator from "../middleware/req_validator";
-import loginSchema from "../definitions/loginSchema";
+import validator from "../middleware/reqValidator";
+import { loginSchema } from "../zod_schemas/loginSchema";
 
 const loginController = express.Router();
 
